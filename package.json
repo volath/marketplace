@@ -1,0 +1,11 @@
+{
+  "name": "volath-marketplace",
+  "private": true,
+  "license": "MIT",
+  "description": "Official Volath plugins: one folder per plugin",
+  "scripts": {
+    "validate": "node scripts/marketplace.js validate",
+    "build": "node scripts/marketplace.js build"
+  },
+  "engines": { "node": ">=20" }
+}

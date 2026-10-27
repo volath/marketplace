@@ -1,0 +1,31 @@
+name: Release plugins
+
+# Pushing a tag (for example plugins-2026.11.0) builds every plugin and attaches the zips and index.json to a release
+on:
+  push:
+    tags: ['plugins-*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: marketplace
+      - uses: actions/checkout@v4
+        with:
+          repository: volath/sdk
+          path: sdk
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm run build
+        working-directory: marketplace
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            marketplace/dist/*.zip
+            marketplace/dist/index.json
