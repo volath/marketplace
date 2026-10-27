@@ -49,8 +49,14 @@ function build() {
     const manifest = JSON.parse(fs.readFileSync(path.join(root, id, 'plugin.json'), 'utf8'));
     const zipPath = path.join(dist, `${id}.zip`);
     run('pack', path.join(root, id), zipPath);
+    // The logo goes next to index.json so the marketplace can show it before anything is installed
+    let logo;
+    if (manifest.logo) {
+      logo = `${id}.logo${path.extname(manifest.logo).toLowerCase()}`;
+      fs.copyFileSync(path.join(root, id, manifest.logo), path.join(dist, logo));
+    }
     // What Volath lists, and the checksum it verifies the download against before installing
-    index.push({ id, name: manifest.name, version: manifest.version, description: manifest.description || '', author: manifest.author || 'Volath', homepage: manifest.homepage || '', permissions: manifest.permissions || {}, sha256: crypto.createHash('sha256').update(fs.readFileSync(zipPath)).digest('hex'), file: `${id}.zip` });
+    index.push({ id, name: manifest.name, version: manifest.version, description: manifest.description || '', author: manifest.author || 'Volath', homepage: manifest.homepage || '', permissions: manifest.permissions || {}, sha256: crypto.createHash('sha256').update(fs.readFileSync(zipPath)).digest('hex'), file: `${id}.zip`, ...(logo ? { logo } : {}) });
   }
   fs.writeFileSync(path.join(dist, 'index.json'), JSON.stringify({ plugins: index }, null, 2));
   console.log(`built ${index.length} plugins in dist/`);

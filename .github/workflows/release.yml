@@ -28,4 +28,5 @@ jobs:
         with:
           files: |
             marketplace/dist/*.zip
+            marketplace/dist/*.logo.*
             marketplace/dist/index.json

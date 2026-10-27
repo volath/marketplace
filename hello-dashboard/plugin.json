@@ -5,6 +5,7 @@
   "apiVersion": 1,
   "description": "Example plugin: tells an external dashboard API when a ticket is merged, keeps the list of merged tickets and shows it on its own page.",
   "author": "Volath",
+  "logo": "logo.svg",
   "main": "index.js",
   "permissions": {
     "network": ["dashboard.example.com"],

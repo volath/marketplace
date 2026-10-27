@@ -5,6 +5,7 @@
   "apiVersion": 1,
   "description": "Reacts to new tickets in code: fills a custom field, leaves a comment and tells the team. Shows ctx.tickets, ctx.developers and ctx.notifications.",
   "author": "Volath",
+  "logo": "logo.svg",
   "main": "index.js",
   "permissions": {
     "tickets": "write",

@@ -5,6 +5,7 @@
   "apiVersion": 1,
   "description": "When a project is created, adds a default developer to it and makes sure the ticket custom field \"cost_center\" exists. No code: actions that ask Volath to do things.",
   "author": "Volath",
+  "logo": "logo.svg",
   "permissions": {
     "developers": "write",
     "customFields": "write",

@@ -5,6 +5,7 @@
   "apiVersion": 1,
   "description": "Puts a widget on the board, a button in the top bar, a menu item, a ticket tab and a project tab. Shows ui.slots.",
   "author": "Volath",
+  "logo": "logo.svg",
   "main": "index.js",
   "permissions": { "tickets": "read" },
   "ui": {

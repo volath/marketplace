@@ -7,6 +7,8 @@
 
 A plugin that asks for `projects: "admin"`, `users: "admin"`, `workflows: "write"`, `actions`, `prompts`, `webhooks` or inbound `webhooks` needs a short justification in its README, because it can change a lot.
 
+Every plugin needs a logo: `"logo": "logo.svg"` in `plugin.json` (a .svg, .png, .jpg or .webp up to 512 KB, square, readable on a light and a dark background). The marketplace shows it on the plugin card.
+
 Bump `version` in `plugin.json` for every change that is released.
 
 ## What is not accepted

@@ -5,6 +5,7 @@
   "apiVersion": 1,
   "description": "Creates the same ticket in another system through its API whenever a ticket is created here. No code: one declarative action.",
   "author": "Volath",
+  "logo": "logo.svg",
   "permissions": {
     "network": ["api.example.com"],
     "events": ["ticket.created"]

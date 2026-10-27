@@ -5,6 +5,7 @@
   "apiVersion": 1,
   "description": "Gives every new project the workflow Volath ships for projects without a remote repository (no CI, review or staging steps). No code: one action that asks Volath to install it.",
   "author": "Volath",
+  "logo": "logo.svg",
   "permissions": {
     "workflows": "write",
     "events": ["project.created"]
